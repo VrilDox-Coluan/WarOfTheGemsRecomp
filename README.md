@@ -1,5 +1,15 @@
 # Marvel Super Heroes: War of the Gems — Native Static Recompilation
 
+> [!WARNING]
+> ### ⚠️ Legal Disclaimer: Bring Your Own Dump
+> **No game data is in this repository. No ROM, no assets, no proprietary data. Bring your own dump** (*Marvel Super Heroes - War of the Gems (U).smc*, 2 MiB headerless, SHA-256 `49dd77b310b476c875633335243553be59ecfb0bffae62e46f2e53ff05c20fcd`).
+> The original game assets (graphics, sound, palettes, music sequences) are loaded directly from your own legally obtained ROM file at runtime. This repository contains only reverse-engineered runner code, menu hooks, and static recompilation tooling.
+
+> [!NOTE]
+> ### 🛑 Project Status: Archived / Up for Grabs
+> **This project is on hold and will NOT be actively maintained or updated by the author.**
+> It is open-sourced as a public foundation and research base for the emulation and decompilation community. The current state (60 FPS native execution, in-game launcher menu, stage select, savestates, and reverse-engineered 16:9 widescreen geometry) is fully functional and **up for grabs** for anyone who wants to fork, continue development, implement true widescreen rendering, or port ROM hacks.
+
 A native PC port of Capcom's 1996 Super Nintendo classic **Marvel Super Heroes in War of the Gems**, created via static binary recompilation (`snesrecomp`).
 
 This project translates the original SNES 65816 machine code into native C11, running alongside an SDL3-based hardware runner with cycle-accurate SNES PPU/APU emulation.
