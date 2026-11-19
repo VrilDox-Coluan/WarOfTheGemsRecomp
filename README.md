@@ -40,6 +40,10 @@ This project translates the original SNES 65816 machine code into native C11, ru
 
 ---
 
+## 📖 Developer Handover & Technical Notes
+
+> **Notice for Contributors:** If you are interested in continuing this project, comprehensive reverse-engineering findings, hardware memory addresses, Capcom fiber-scheduler traps, and Widescreen 16:9 implementation details have been compiled in **[docs/DEVELOPER_NOTES.md](docs/DEVELOPER_NOTES.md)**.
+
 ---
 
 ## Current Status (Work in Progress)
