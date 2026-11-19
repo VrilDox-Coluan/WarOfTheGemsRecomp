@@ -1,5 +1,10 @@
 # Marvel Super Heroes: War of the Gems — Native Static Recompilation
 
+[![Status: Up For Grabs](https://img.shields.io/badge/status-up_for_grabs-brightgreen.svg)](https://github.com/VrilDox-Coluan/WarOfTheGemsRecomp)
+[![Engine: snesrecomp](https://img.shields.io/badge/engine-snesrecomp-blue.svg)](https://github.com/VrilDox-Coluan/WarOfTheGemsRecomp)
+[![Stack: C11 | SDL3](https://img.shields.io/badge/stack-C11%20%7C%20SDL3-orange.svg)](https://github.com/VrilDox-Coluan/WarOfTheGemsRecomp)
+[![Sister Project: X-Men Recomp](https://img.shields.io/badge/sister_project-X--Men%20Recomp-purple.svg)](https://github.com/VrilDox-Coluan/XMenMutantApocalypseRecomp)
+
 > [!WARNING]
 > ### ⚠️ Legal Disclaimer: Bring Your Own Dump
 > **No game data is in this repository. No ROM, no assets, no proprietary data. Bring your own dump** (*Marvel Super Heroes - War of the Gems (U).smc*, 2 MiB headerless, SHA-256 `49dd77b310b476c875633335243553be59ecfb0bffae62e46f2e53ff05c20fcd`).
@@ -8,11 +13,32 @@
 > [!NOTE]
 > ### 🛑 Project Status: Archived / Up for Grabs
 > **This project is on hold and will NOT be actively maintained or updated by the author.**
-> It is open-sourced as a public foundation and research base for the emulation and decompilation community. The current state (60 FPS native execution, in-game launcher menu, stage select, savestates, and reverse-engineered 16:9 widescreen geometry) is fully functional and **up for grabs** for anyone who wants to fork, continue development, implement true widescreen rendering, or port ROM hacks.
+> Please note that the author has ceased active development on **both** Capcom SNES recompilation projects:
+> - **Marvel Super Heroes: War of the Gems Recomp** (this repository)
+> - [X-Men: Mutant Apocalypse Recomp](https://github.com/VrilDox-Coluan/XMenMutantApocalypseRecomp) (sister project sharing the Capcom fiber-scheduler engine)
+>
+> Both repositories are released as public research foundations for the emulation, decompilation, and speedrunning communities. They are fully functional up through active gameplay at 60 FPS and are **up for grabs** for anyone who wants to fork, continue development, implement true 16:9 widescreen rendering, or port ROM hacks.
 
 A native PC port of Capcom's 1996 Super Nintendo classic **Marvel Super Heroes in War of the Gems**, created via static binary recompilation (`snesrecomp`).
 
 This project translates the original SNES 65816 machine code into native C11, running alongside an SDL3-based hardware runner with cycle-accurate SNES PPU/APU emulation.
+
+---
+
+## Estimated Progress & Status
+
+| Subsystem | Progress | Status | Notes |
+| :--- | :--- | :--- | :--- |
+| **Boot & Intro Parity** | `██████████` 100% | Complete | Parity verified matching LLE reference on boot (frame SHA-256 match at 300 frames) |
+| **Audio (SPC700 / DSP)** | `██████████` 100% | Complete | Music & sound effects running natively via SPC700/DSP core |
+| **In-Game Debug Menu & Launcher** | `██████████` 100% | Complete | Debug menu (`M`), Stage select (`00..0E`), real-time pause & frame step (`K`) |
+| **Input & Savestates** | `██████████` 100% | Complete | Full gamepad/keyboard mapping, 10 save/load slots, visual thumbnail browser (`F7`) |
+| **Character Physics & Combat** | `█████████░` 90% | Playable | Iron Man, Hulk, Spider-Man, Wolverine, Captain America playable at 60 FPS |
+| **AOT Code Coverage** | `████████░░` 80% | High | 429 roots mapped, 388 AOT compiled, 190 dynamic targets safe in LLE fallback |
+| **16:9 Widescreen Groundwork** | `██████░░░░` 60% | Mapped | Camera registers (`$7E:3F9B`/`$7E:3F9F`) & horizontal clipping (`0xC29D90`, `0xC27A03`) mapped |
+| **ROM Hack & Modding Support** | `█████░░░░░` 50% | Analyzed | Memory layout analyzed for Redux v3.0, Color Palettes, and Spanish translation |
+
+---
 
 ---
 
