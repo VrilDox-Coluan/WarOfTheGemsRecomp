@@ -94,13 +94,24 @@ The reverse-engineered game geometry is already mapped:
 - **Next Step**: Expand the SDL3 viewport aspect ratio to 16:9 (426x240 or 384x216), widen the PPU scanline rasterizer buffer, and patch the horizontal clipping limits so enemies and objects render outside the original 256px boundary.
 
 ### 🎮 Enhancements & Modding
-- **IPS Patch Integration**:
-  - *Redux v3.0*: Uses bank `$DF` free space and patches into `$C0` and `$C1`.
-  - *Palette / Color Fixes*: Modifies tables located in banks `$C5` through `$CF`.
-  - *Translations (Spanish, Japanese)*: Modifies dialogue pointers and 8x8 font tables in `$C0` and `$C5`.
+- **IPS Patch & ROM Hack Compatibility**:
+  - **War of the Gems Redux (v3.0)** by **BillyTime! Games**: Revamps gameplay mechanics, gem abilities, adds alternate costumes, and adds SRAM password saving using free space in Bank `$DF` with hooks in `$C0` and `$C1`.
+  - **Palette Patch** by **Kertra**: MCU-accurate Infinity Stone color schemes, classic purple shorts for Hulk, and refined character palettes in Banks `$C5` through `$CF`.
+  - **Spanish Translation (v1.1)** by **Max1323**: Full dialogue localization and custom 8x8 font tables in Banks `$C0` and `$C5`.
 - **Controls & Input**:
   - Native SDL3 Gamepad support with remappable button layouts.
   - High-DPI UI scaling and fullscreen toggle (**`Alt+Enter`** / **`F11`**).
+
+---
+
+## 👏 Community Credits & ROM Hack Authors
+
+Huge thanks to the talented ROM hackers whose research and public patches provided invaluable reference points for reverse-engineering the game's internal memory layouts, palette banks, and character state machines:
+
+- **[BillyTime! Games](https://www.romhacking.net/community/5645/)**: Creator of the incredible *Marvel Super Heroes in War of the Gems Redux* overhaul (costumes, X-button specials, gem rework, and SRAM saving).
+- **[Kertra](https://www.romhacking.net/community/6652/)**: Creator of the *Marvel Super Heroes: War of The Gems Palette Patch* (comic/MCU color refinements).
+- **[Max1323](https://www.romhacking.net/community/5000/)**: Creator of the *Marvel Super Heroes War of the Gems (Spanish v1.1)* localization.
+- **[spinda](https://github.com/spinda)** & the `snesrecomp` project contributors for the underlying static recompilation engine and runner.
 
 ---
 

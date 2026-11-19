@@ -97,14 +97,27 @@ The in-game menu is implemented in [`runner/wotg_menu.c`](../runner/wotg_menu.c)
 
 ## 5. ROM Hack & Modding Layout
 
-For developers interested in adding modding or patch support:
-- **Redux v3.0 Patch**:
-  - Hooks gameplay logic inside Banks `$C0` and `$C1`.
+For developers interested in adding modding or patch support, the following community patches were analyzed during reverse-engineering and serve as primary reference architectures:
+
+- **Redux v3.0 Patch** (by **BillyTime! Games**):
+  - Hooks gameplay logic, alternate character forms, and special moves inside Banks `$C0` and `$C1`.
   - Places expanded code and routines into Bank `$DF` (free space in the original HiROM).
-- **Color / Palette Restoration**:
-  - Modifies pure color lookup tables in Banks `$C5` through `$CF`. Can be applied directly to the ROM buffer or hooked via `snes_beam_frame_driver`.
-- **Translations (Spanish 1.1 / French)**:
+  - Uses `$C5:FDB1` / `$C5:FE00` hooks to implement automatic SRAM saving for passwords.
+- **Palette Patch** (by **Kertra**):
+  - Modifies pure color lookup tables in Banks `$C5` through `$CF` (Hulk purple shorts, MCU Infinity Stone colors).
+  - Can be hooked dynamically via `snes_beam_frame_driver` or patched into ROM palettes at startup.
+- **Translations (Spanish 1.1 by Max1323)**:
   - Dialogue strings and 8×8 font tables reside in `$C0` and `$C5`.
+
+---
+
+## 6. Community Credits & Acknowledgments
+
+Special recognition to the ROM hackers and researchers whose work helped map the Capcom SNES engine:
+- **BillyTime! Games**: Author of *War of the Gems Redux*.
+- **Kertra**: Author of the *War of The Gems Palette Patch*.
+- **Max1323**: Author of the *Spanish Translation 1.1*.
+- **spinda**: Author of `snesrecomp`.
 
 ---
 
